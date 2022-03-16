@@ -8,6 +8,7 @@ export default {
   argTypes: {
     title: { control: 'text' },
     disabled: { control: 'boolean' },
+    padding: { control: 'boolean' },
     variant: {
       control: { type: 'select' },
       options: [ 'primary', 'secondary'],
@@ -15,10 +16,10 @@ export default {
   },
 };
 
-const defaultArgs = { disabled: false }
+const defaultArgs = { disabled: false, padding: false }
 
-export const Simple = ({ title, disabled, variant, tag }) => {
-  const props = { disabled, variant, tag, title };
+export const Simple = ({ title, disabled, variant, tag, padding }) => {
+  const props = { disabled, variant, tag, title, padding };
   const contents = title;
 
   return Btn({ props, contents, });
@@ -41,8 +42,8 @@ Simple.args = {
 
 
 
-export const InputButton = ({ title, disabled, variant }) => {
-  const props = { disabled, variant, value: title, title };
+export const InputButton = ({ title, disabled, variant, padding }) => {
+  const props = { disabled, variant, value: title, title, padding };
 
   return BtnInput({ props });
 };
@@ -55,8 +56,8 @@ InputButton.args = {
 }
 
 
-export const LinkButton = ({ title, disabled, variant, href }) => {
-  const props = { disabled, variant, href, title };
+export const LinkButton = ({ title, disabled, variant, href, padding }) => {
+  const props = { disabled, variant, href, title, padding };
   const contents = title;
 
   return BtnLink({ props, contents });

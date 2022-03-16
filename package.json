@@ -74,6 +74,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@storybook/addon-a11y": "^6.4.19",
     "@storybook/preset-scss": "^1.0.3",
     "pug": "^3.0.2",
     "pug-runtime": "^3.0.1",

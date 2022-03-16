@@ -5,6 +5,7 @@ include ./btn.pug
   props:
   - {boolean} value - текст, который отображается внутри кнопки
   - {string} variant - вариант стилей кнопки {primary|secondary}
+  - {boolean} padding - у кнопки установлены внутр. отступы
   - {boolean} disabled - кнопка заблокирована
 mixin btn-input(props = {})
   - var DEFAULT_PROPS = { tag: 'input', type: 'button', value: '' }

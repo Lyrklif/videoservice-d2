@@ -7,7 +7,9 @@
     "browser-sync": "cross-env mode=development webpack --mode development --watch",
     "dev-server": "cross-env mode=development webpack-dev-server --mode development --watch",
     "prod": "cross-env mode=production webpack --mode production --watch",
-    "deploy": "gh-pages -d dist"
+    "deploy gh-pages": "gh-pages -d dist",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,10 @@
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/html": "^6.4.19",
     "autoprefixer": "^9.7.0",
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
@@ -68,6 +74,9 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "reset-css": "^5.0.1"
+    "@storybook/preset-scss": "^1.0.3",
+    "pug": "^3.0.2",
+    "pug-runtime": "^3.0.1",
+    "storypug": "^1.0.0-rc.8"
   }
 }

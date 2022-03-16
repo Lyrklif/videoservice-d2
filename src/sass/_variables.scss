@@ -1,0 +1,24 @@
+// *** Шрифт
+$font-family: 'Rubik',
+  'Roboto',
+  'Helvetica',
+  'Arial',
+  sans-serif;
+
+
+// *** Основные цвета сайта
+$white: #ffffff;
+
+$primary: #e5261e;
+$primary-dark: #cc221b;
+
+$easing: .3s ease-in-out;
+
+
+// *** Переменные для кнопок
+$btn-color: $primary;
+$btn-color-hover: $primary-dark;
+
+$btn-primary-color: $white;
+$btn-primary-bg: $primary;
+$btn-primary-bg-hover: $primary-dark;

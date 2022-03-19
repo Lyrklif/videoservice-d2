@@ -76,6 +76,7 @@
   "dependencies": {
     "@storybook/addon-a11y": "^6.4.19",
     "@storybook/preset-scss": "^1.0.3",
+    "normalize.css": "^8.0.1",
     "pug": "^3.0.2",
     "pug-runtime": "^3.0.1",
     "storypug": "^1.0.0-rc.8"

@@ -1,0 +1,17 @@
+include ./btn.pug
+
+//-
+  Input, стилизованный под кнопку
+  props:
+  - {boolean} value - текст, который отображается внутри кнопки
+  - {string} variant - вариант стилей кнопки {primary|secondary}
+  - {boolean} padding - у кнопки установлены внутр. отступы
+  - {boolean} disabled - кнопка заблокирована
+mixin btn-input(props = {})
+  - var DEFAULT_PROPS = { tag: 'input', type: 'button', value: '' }
+
+  -delete props.tag
+  -delete props.type
+
+  +btn(Object.assign(DEFAULT_PROPS, props))
+    block

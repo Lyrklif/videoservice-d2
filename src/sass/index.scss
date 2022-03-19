@@ -1,3 +1,14 @@
-body {
-  // ...
-}
+// *** plugins
+@import '../../node_modules/normalize.css/normalize';
+
+
+// *** основные стили
+@import './variables';
+@import './mixins';
+@import './functions';
+@import './breakpoints';
+@import './general';
+
+
+// *** компоненты
+@import '../components/btn';

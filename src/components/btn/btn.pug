@@ -1,0 +1,21 @@
+
+
+//-
+  Универсальный компонент кнопки
+  props:
+  - {string} tag - html тег компонента {button|a|input|div|span}
+  - {string} variant - вариант стилей кнопки {primary|secondary}
+  - {boolean} padding - у кнопки установлены внутр. отступы
+  - {boolean} disabled - кнопка заблокирована
+mixin btn(props = {})
+  - var tag = props.tag || 'button'
+  - var classes = ''
+  -classes += props.disabled ? ' btn_disabled' : ''
+  -classes += props.variant ? ` btn-${props.variant}` : ''
+  -classes += props.padding ? ` btn_padding` : ''
+
+  -delete props.tag
+  -delete props.variant
+
+  #{tag}.btn(class=classes)&attributes(props)
+    block 

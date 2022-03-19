@@ -1,0 +1,16 @@
+include ./btn.pug
+
+//-
+  Ссылка, стилизованная под кнопку
+  props:
+  - {string} href - href ссылки {#}
+  - {string} variant - вариант стилей кнопки {primary|secondary}
+  - {boolean} padding - у кнопки установлены внутр. отступы
+  - {boolean} disabled - кнопка заблокирована
+mixin btn-link(props = {})
+  - var DEFAULT_PROPS = { tag: 'a', href: '#', role: "button" }
+
+  -delete props.tag
+
+  +btn(Object.assign(DEFAULT_PROPS, props))
+    block

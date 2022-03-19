@@ -21,7 +21,7 @@ const cleanWebpackPlugin = require('./webpack/plugins/clean-webpack-plugin'); //
 module.exports = () => {
   const commonConfig = webpackMerge(
     setEntry({
-      index: './src/pages/index/index.js',
+      index: './src/scripts/index.js',
       libs: './src/sass/index.scss'
     }),
     htmlWebpackPlugin({

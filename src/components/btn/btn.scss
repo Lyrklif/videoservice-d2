@@ -56,4 +56,9 @@
     color: $btn-secondary-color;
     @include hover(color, $btn-secondary-color-hover);
   }
+
+  &_disabled {
+    pointer-events: none;
+    opacity: 0.8;
+  }
 }

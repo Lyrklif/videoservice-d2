@@ -1,0 +1,27 @@
+
+$grid-breakpoints-sm: rem(576px);
+$grid-breakpoints-md: rem(768px);
+$grid-breakpoints-lg: rem(992px);
+$grid-breakpoints-xl: rem(1280px);
+
+
+// @template: @include sm-up {}
+@mixin sm-up {
+  @media (min-width: $grid-breakpoints-sm) { @content; }
+  // @media (min-width: 36rem) { @content; }
+}
+
+// @template: @include md-up {}
+@mixin md-up {
+  @media (min-width: $grid-breakpoints-md) { @content; }
+}
+
+// @template: @include lg-up {}
+@mixin lg-up {
+  @media (min-width: $grid-breakpoints-lg) { @content; }
+}
+
+// @template: @include xl-up {}
+@mixin xl-up {
+  @media (min-width: $grid-breakpoints-xl) { @content; }
+}

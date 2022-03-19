@@ -1,0 +1,16 @@
+
+// @template: @include hover(color, green);
+@mixin hover ($property, $value) {
+  transition: #{$property} $easing;
+
+  &:active {
+    #{$property}: $value;
+  }
+
+  @include lg-up() {
+    &:hover, 
+    &:focus {
+      #{$property}: $value;
+    }
+  }
+}

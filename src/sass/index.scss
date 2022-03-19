@@ -1,9 +1,11 @@
 // *** plugins
 @import '../../node_modules/normalize.css/normalize';
 
-// основные стили
+
+// *** основные стили
 @import './variables';
 @import './mixins';
+@import './functions';
 @import './general';
 
 

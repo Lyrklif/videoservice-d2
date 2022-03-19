@@ -1,0 +1,37 @@
+
+
+// Перевод px в em
+// @template: 
+//           font-size: em(18);
+//           font-size: em(18px);
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+
+// Перевод px в rem
+// @template: 
+//           font-size: rem(18);
+//           font-size: rem(18px); 
+@function rem($pixels) {
+  $context: $browser-context;
+
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return ($pixels / $context) + rem;
+}
+

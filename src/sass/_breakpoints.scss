@@ -8,7 +8,6 @@ $grid-breakpoints-xl: rem(1280px);
 // @template: @include sm-up {}
 @mixin sm-up {
   @media (min-width: $grid-breakpoints-sm) { @content; }
-  // @media (min-width: 36rem) { @content; }
 }
 
 // @template: @include md-up {}

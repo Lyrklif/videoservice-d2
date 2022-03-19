@@ -1,0 +1,24 @@
+
+
+//-
+  Input с типом "checkbox"
+  props:
+  - {boolean} checked - выбран ли checkbox
+  - {boolean} disabled - checkbox заблокирован
+  - {string} labelClass - стили для label (родительский тег для input)
+  - {string|number} tabindex - tabindex для label [по-умолчанию: 0]
+mixin checkbox(props = {})
+  - var checked = props.checked
+  - var tabindex = props.tabindex || 0
+  - var labelClass = props.labelClass || ''
+  - var title = props.title || null
+  -labelClass += props.disabled ? ' checkbox_disabled' : ''
+
+  - delete props.tabindex
+  - delete props.labelClass
+  - delete props.title
+
+  label.checkbox.js-checkbox(tabindex=tabindex class=labelClass title=title)
+    input.checkbox__input(type="checkbox" checked!=checked)&attributes(props)
+    span.checkbox__text 
+      block

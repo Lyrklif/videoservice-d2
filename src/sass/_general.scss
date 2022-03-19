@@ -1,4 +1,19 @@
 * {
-  box-sizing: border-box;
   outline-color: $primary;
+  
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+
+html {
+  font-size: rem(16px);
+}
+
+html,
+body {
+  font-family: $font-family;
 }

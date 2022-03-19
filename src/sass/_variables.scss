@@ -19,9 +19,13 @@ $easing: .3s ease-in-out;
 
 
 // *** Переменные для кнопок
+$btn-border-radius: 4px;
 $btn-color: $primary;
 $btn-color-hover: $primary-dark;
 
 $btn-primary-color: $white;
 $btn-primary-bg: $primary;
 $btn-primary-bg-hover: $primary-dark;
+
+$btn-secondary-color: $primary;
+$btn-secondary-color-hover: $primary-dark;

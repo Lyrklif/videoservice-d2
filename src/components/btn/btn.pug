@@ -10,9 +10,9 @@
 mixin btn(props = {})
   - var tag = props.tag || 'button'
   - var classes = ''
-  -classes += props.disabled ? 'btn--disabled' : ''
-  -classes += props.variant ? `btn--${props.variant}` : ''
-  -classes += props.padding ? `btn_padding` : ''
+  -classes += props.disabled ? ' btn_disabled' : ''
+  -classes += props.variant ? ` btn-${props.variant}` : ''
+  -classes += props.padding ? ` btn_padding` : ''
 
   -delete props.tag
   -delete props.variant

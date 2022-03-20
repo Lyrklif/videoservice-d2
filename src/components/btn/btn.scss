@@ -16,27 +16,27 @@
 .btn {
   position: relative;
 
-  display: inline-block; /* 6 */
-  padding: 0; /* 1 */
-  margin: 0; /* 1 */
-  
+  display: inline-block; // 6
+  padding: 0; // 1
+  margin: 0; // 1
+
   font-family: inherit;
-  font-weight: inherit; /* 11 */
+  font-weight: inherit; // 11
   color: inherit;
 
-  text-align: center; /* 10 */
-  overflow: visible; /* 8 */
+  text-align: center; // 10
+  overflow: visible; // 8
 
-  -moz-user-focus: ignore; /* 5 */
+  -moz-user-focus: ignore; // 5
 
-  user-select: none; /* 2 */
-  white-space: nowrap; /* 4 */
-  text-decoration: none; /* 3 */
+  user-select: none; // 2
+  white-space: nowrap; // 4
+  text-decoration: none; // 3
 
   border-width: 0;
   border-radius: em($btn-border-radius);
-  background: transparent; /* 9 */
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 7 */
+  background: transparent; // 9
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // 7
 
   touch-action: manipulation;
   cursor: pointer;
@@ -47,11 +47,11 @@
   }
 
   &-primary {
-    background-color: $btn-primary-bg;
     color: $btn-primary-color;
+    background-color: $btn-primary-bg;
     @include hover(background-color, $btn-primary-bg-hover);
   }
-  
+
   &-secondary {
     color: $btn-secondary-color;
     @include hover(color, $btn-secondary-color-hover);

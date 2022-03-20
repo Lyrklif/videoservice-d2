@@ -1,5 +1,3 @@
-
-
 // Перевод px в em
 // @template: 
 //           font-size: em(18);
@@ -13,7 +11,7 @@
     $context: $context * 1px;
   }
 
-  @return $pixels / $context * 1em;
+  @return calc($pixels / $context) * 1em;
 }
 
 
@@ -32,6 +30,5 @@
     $context: $context * 1px;
   }
 
-  @return ($pixels / $context) + rem;
+  @return calc($pixels / $context)+rem;
 }
-

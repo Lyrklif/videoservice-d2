@@ -1,4 +1,3 @@
-
 // @template: @include hover(color, green);
 @mixin hover ($property, $value) {
   transition: #{$property} $easing;
@@ -8,9 +7,17 @@
   }
 
   @include lg-up() {
-    &:hover, 
+
+    &:hover,
     &:focus {
       #{$property}: $value;
     }
   }
+}
+
+// @template: @include disabled();
+@mixin disabled() {
+  pointer-events: none;
+  opacity: $disabled-opacity;
+  cursor: $disabled-cursor;
 }

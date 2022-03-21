@@ -1,9 +1,9 @@
 // *** Шрифт
 $font-family: 'Rubik',
-  'Roboto',
-  'Helvetica',
-  'Arial',
-  sans-serif;
+'Roboto',
+'Helvetica',
+'Arial',
+sans-serif;
 
 
 $browser-context: 16;
@@ -18,6 +18,11 @@ $primary-dark: #cc221b;
 $easing: .3s ease-in-out;
 
 
+// *** Disabled
+$disabled-opacity: 0.6;
+$disabled-cursor: default;
+
+
 // *** Переменные для кнопок
 $btn-border-radius: 4px;
 $btn-color: $primary;
@@ -29,3 +34,8 @@ $btn-primary-bg-hover: $primary-dark;
 
 $btn-secondary-color: $primary;
 $btn-secondary-color-hover: $primary-dark;
+
+
+// *** Переменные для checkbox
+$checkbox-box-border-color: #333333;
+$checkbox-box-select-color: $primary;

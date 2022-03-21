@@ -1,0 +1,41 @@
+
+
+//-
+  Input с типом "checkbox"
+  props:
+  - {boolean} checked - выбран ли checkbox
+  - {boolean} disabled - checkbox заблокирован
+  - {string} variant - вариант стилей для box (галочка/флажок) {primary}
+  - {string} labelClass - стили для label (родительский тег для input)
+  - {string} boxClass - стили для box (галочка/флажок для обозначения, что checkbox выбран)
+  - {string} inputClass - стили для input
+mixin checkbox(props = {})
+  - var checked = props.checked
+  - var tabindex = props.disabled ? null : props.tabindex || 0
+  - var title = props.title || null
+  - var isCustomBox = props.variant && props.variant !== 'default'
+
+  - var labelClass = props.labelClass || ''
+  - var inputClass = props.inputClass || ''
+  - var boxClass = props.boxClass || ''
+  -labelClass += isCustomBox ? ` checkbox_${props.variant}` : ''
+  -labelClass += props.disabled ? ' checkbox_disabled' : ''
+  -labelClass += props.disabled ? ' checkbox_disabled' : ''
+  -inputClass += props.disabled ? ' checkbox__input_disabled' : ''
+  -inputClass += isCustomBox ? ' visually-hidden' : ''
+  -boxClass += isCustomBox ? ` checkbox__box_${props.variant}` : ''
+  -boxClass += checked ? ' checkbox__box_checked' : ''
+
+  - delete props.tabindex
+  - delete props.labelClass
+  - delete props.title
+  - delete props.boxClass
+  - delete props.inputClass
+  - delete props.variant
+
+  label.checkbox.js-checkbox(tabindex=tabindex class=labelClass title=title)
+    input.checkbox__input(type="checkbox" checked!=checked class=inputClass tabindex="-1")&attributes(props)
+    if (isCustomBox) 
+      span.checkbox__box(class=boxClass)
+    span.checkbox__text 
+      block

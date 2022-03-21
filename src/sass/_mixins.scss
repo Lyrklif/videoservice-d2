@@ -14,3 +14,10 @@
     }
   }
 }
+
+// @template: @include disabled();
+@mixin disabled() {
+  pointer-events: none;
+  opacity: $disabled-opacity;
+  cursor: $disabled-cursor;
+}

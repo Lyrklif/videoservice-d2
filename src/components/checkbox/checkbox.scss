@@ -10,4 +10,8 @@
 
   touch-action: manipulation;
   cursor: pointer;
+
+  &_disabled {
+    @include disabled();
+  }
 }

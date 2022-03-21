@@ -18,12 +18,12 @@ mixin checkbox(props = {})
   - var labelClass = props.labelClass || ''
   - var inputClass = props.inputClass || ''
   - var boxClass = props.boxClass || ''
-  -labelClass += isCustomBox ? ` checkbox_${props.variant}` : ''
+  -labelClass += isCustomBox ? ` checkbox-${props.variant}` : ''
   -labelClass += props.disabled ? ' checkbox_disabled' : ''
   -labelClass += props.disabled ? ' checkbox_disabled' : ''
   -inputClass += props.disabled ? ' checkbox__input_disabled' : ''
   -inputClass += isCustomBox ? ' visually-hidden' : ''
-  -boxClass += isCustomBox ? ` checkbox__box_${props.variant}` : ''
+  -boxClass += isCustomBox ? ` checkbox__box-${props.variant}` : ''
   -boxClass += checked ? ' checkbox__box_checked' : ''
 
   - delete props.tabindex

@@ -4,6 +4,11 @@
   touch-action: manipulation;
   cursor: pointer;
 
+  &-primary {
+    outline: 0;
+    @include hover(color, $checkbox-hover-color);
+  }
+
 
   &__box {
     position: relative;

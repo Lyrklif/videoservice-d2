@@ -5,14 +5,20 @@ export default {
   title: 'Checkbox',
   argTypes: {
     title: { control: 'text' },
-    disabled: { control: 'boolean' },
     checked: { control: 'boolean' },
-    tabindex: { control: 'number' },
+    variant: {
+      control: { type: 'select' },
+      options: [ 'primary' ],
+    },
+    disabled: { control: 'boolean' },
+    labelClass: { control: 'text' },
+    boxClass: { control: 'text' },
+    inputClass: { control: 'text' },
   },
 };
 
-export const CheckboxSimple = ({ title, disabled, checked, tabindex }) => {
-  const props = { title, disabled, checked, tabindex };
+export const CheckboxSimple = (props) => {
+  const { title } = props;
   const contents = title;
 
   return Checkbox({ props, contents });
@@ -22,4 +28,6 @@ CheckboxSimple.storyName = 'Checkbox'
 
 CheckboxSimple.args = {
   title: 'Checkbox',
+  disabled: false, 
+  checked: false,
 }

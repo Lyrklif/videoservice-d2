@@ -1,0 +1,29 @@
+
+//-
+  Поле для ввода текста/цифр (input с типами: text, number, search, password)
+  props:
+  - {string} variant - вариант стилей input {primary}
+  - {string} type - тип данных поля {text|number|search|password}
+  - {string} inputmode - какую клавиатуру использовать для ввода {text|decimal|numeric|search}
+  - {string|number} value - значение input
+  - {string} placeholder - текст, который отображается, пока поле не заполнено
+  - {string} autocomplete - автозаполнение {off|on}
+  - {boolean} disabled - input заблокирован
+  - {string} wrapTag - тег родительского элемента для input {label|span|div}
+mixin input(props={})
+  - var wrapTag = props.wrapTag || 'label'
+  - var inputType = props.type || 'text'
+  - var inputmode = props.inputmode || 'text'
+
+  - var wrapClass = ''
+  -wrapClass += props.disabled ? ' input_disabled' : ''
+  -wrapClass += props.variant ? ` input-${props.variant}` : ''
+
+  -delete props.wrapClass
+  -delete props.wrapTag
+  -delete props.variant
+  -delete props.type
+  -delete props.inputmode
+
+  #{wrapTag}.input(class=wrapClass)
+    input.input__fluid(type=inputType inputmode=inputmode)&attributes(props)

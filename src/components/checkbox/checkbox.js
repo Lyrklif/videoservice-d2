@@ -3,7 +3,12 @@ const checkboxEnterClick = () => {
   const checkboxes = document.querySelectorAll('.js-checkbox');
 
   const simulateClick = (event, elem) => {
-    if (event.key === 'Enter') elem.click();
+    if (event.key === 'Enter') {
+      // предотвращать отправку данных формы, в которой находится checkbox
+      event.preventDefault();
+
+      elem.click();
+    }
   };
 
   checkboxes.forEach((checkbox) => {

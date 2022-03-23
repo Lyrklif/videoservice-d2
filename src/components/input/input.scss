@@ -19,10 +19,10 @@
     }
 
     &-primary {
-      outline: 0;
-      color: $input-color;
       font-weight: 500;
+      color: $input-color;
       background-color: transparent;
+      outline: 0;
       border-right: none;
       border-left: none;
       border-top: none;
@@ -30,8 +30,8 @@
       vertical-align: sub;
 
       &:placeholder {
-        color: $input-placeholder-color;
         font-weight: 400;
+        color: $input-placeholder-color;
       }
   
       @include hover-child(color, $input-placeholder-color-hover, '&::placeholder');

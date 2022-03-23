@@ -39,18 +39,29 @@
 
 
     &-primary {
+      --placeholder-color: #{$input-placeholder-color};
+      --placeholder-color-hover: #{$input-placeholder-color-hover};
+
       font-weight: 500;
       color: $input-color;
       background-color: $textarea-primary-bg-color;
+      border: 0;
       outline: 0;
       vertical-align: sub;
 
-      &:placeholder {
+      &::placeholder {
         font-weight: 400;
-        color: $input-placeholder-color;
+        color: var(--placeholder-color);
       }
-  
-      @include hover-child(color, $input-placeholder-color-hover, '&::placeholder');
+      @include hover-child(color, var(--placeholder-color-hover), '&::placeholder');
+
+
+      &_error {
+        --placeholder-color: #{$error-color};
+        --placeholder-color-hover: #{$error-color};
+
+        background-color: rgba($error-color, 0.15);
+      }
     }
   }
 

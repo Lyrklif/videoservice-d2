@@ -10,6 +10,7 @@
   - {string|number} value - значение textarea
   - {string} placeholder - текст, который отображается, пока поле не заполнено
   - {string} autocomplete - автозаполнение {off|on}
+  - {boolean} error - указывает на ошибку варидации, выделяя поле красным цветом
   - {boolean} disabled - textarea заблокирован
   - {string} wrapTag - тег родительского элемента для textarea {label|span|div}
   - {string} wrapClass - классы для родительского элемента textarea
@@ -30,6 +31,7 @@ mixin textarea(props={})
   -fluidClass += props.size ? ` textarea__fluid_size_${props.size}` : ''
   -fluidClass += resize ? ` textarea__fluid_resize_${resize}` : ''
   -fluidClass += props.padding ? ` textarea__fluid_padding_${props.padding}` : ''
+  -fluidClass += props.error ? ` textarea__fluid${props.variant ? `-${props.variant}` : ''}_error` : ''
 
   -delete props.wrapClass
   -delete props.wrapTag

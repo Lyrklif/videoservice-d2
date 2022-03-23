@@ -26,9 +26,9 @@ export default {
     },
     type: {
       control: { type: 'select' },
-      options: [ 'text', 'number', 'search', 'password' ],
+      options: [ 'text', 'search', 'password' ],
       defaultValue: 'text',
-      description: 'тип данных поля {text|number|search|password}',
+      description: 'тип данных поля {text|search|password}',
     },
     inputmode: {
       control: { type: 'select' },

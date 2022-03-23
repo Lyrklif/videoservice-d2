@@ -14,7 +14,6 @@
     &_size {
       &_m {
         height: em(25px);
-        padding-bottom: em(6px);
       }
     }
 
@@ -28,6 +27,10 @@
       border-top: none;
       border-bottom: 1px solid $input-border-color;
       vertical-align: sub;
+
+      &.input__fluid_size_m {
+        padding-bottom: em(6px);
+      }
 
       &:placeholder {
         font-weight: 400;

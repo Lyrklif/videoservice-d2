@@ -1,0 +1,43 @@
+.input {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+
+  &_disabled {
+    @include disabled();
+  }
+
+
+  &__fluid {
+    width: 100%;
+
+    &_size {
+      &_m {
+        height: em(25px);
+      }
+    }
+
+    &-primary {
+      font-weight: 500;
+      color: $input-color;
+      background-color: transparent;
+      outline: 0;
+      border-right: none;
+      border-left: none;
+      border-top: none;
+      border-bottom: 1px solid $input-border-color;
+      vertical-align: sub;
+
+      &.input__fluid_size_m {
+        padding-bottom: em(6px);
+      }
+
+      &:placeholder {
+        font-weight: 400;
+        color: $input-placeholder-color;
+      }
+  
+      @include hover-child(color, $input-placeholder-color-hover, '&::placeholder');
+    }
+  }
+}

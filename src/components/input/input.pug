@@ -1,0 +1,39 @@
+
+//-
+  Поле для ввода текста (input с типами: text, search, password)
+  props:
+  - {string|number} id - id поля
+  - {string} variant - вариант стилей input {primary}
+  - {string} type - тип данных поля {text|search|password}
+  - {string} size - размер поля {m}
+  - {string} inputmode - какую клавиатуру использовать для ввода {text|decimal|numeric|search}
+  - {string|number} value - значение input
+  - {string} placeholder - текст, который отображается, пока поле не заполнено
+  - {string} autocomplete - автозаполнение {off|on}
+  - {boolean} disabled - input заблокирован
+  - {string} wrapTag - тег родительского элемента для input {label|span|div}
+  - {string} wrapClass - классы для родительского элемента для input
+mixin input(props={})
+  - var wrapTag = props.wrapTag || 'label'
+  - var inputType = props.type || 'text'
+  - var inputmode = props.inputmode || 'text'
+  - var forValue = (props.id && wrapTag === 'label') ? props.id : null
+
+  - var wrapClass = ''
+  - var fluidClass = ''
+  -wrapClass += props.disabled ? ' input_disabled' : ''
+  -wrapClass += props.variant ? ` input-${props.variant}` : ''
+  -wrapClass += props.size ? ` input_size_${props.size}` : ''
+  -fluidClass += props.disabled ? ' input__fluid_disabled' : ''
+  -fluidClass += props.variant ? ` input__fluid-${props.variant}` : ''
+  -fluidClass += props.size ? ` input__fluid_size_${props.size}` : ''
+
+  -delete props.wrapClass
+  -delete props.wrapTag
+  -delete props.variant
+  -delete props.type
+  -delete props.inputmode
+  -delete props.size
+
+  #{wrapTag}.input(class=wrapClass for=forValue)
+    input.input__fluid(type=inputType inputmode=inputmode class=fluidClass)&attributes(props)

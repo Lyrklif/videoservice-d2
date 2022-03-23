@@ -16,6 +16,10 @@ export default {
       control: 'boolean',
       defaultValue: false,
     },
+    error: { 
+      control: 'boolean',
+      defaultValue: false,
+    },
     resize: {
       control: { type: 'select' },
       options: [ 'none', 'both', 'horizontal', 'vertical', 'inherit' ],

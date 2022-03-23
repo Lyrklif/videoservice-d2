@@ -5,6 +5,7 @@
   - {string|number} id - id поля
   - {string} variant - вариант стилей input {primary}
   - {string} type - тип данных поля {text|number|search|password}
+  - {string} size - размер поля {m}
   - {string} inputmode - какую клавиатуру использовать для ввода {text|decimal|numeric|search}
   - {string|number} value - значение input
   - {string} placeholder - текст, который отображается, пока поле не заполнено
@@ -22,13 +23,17 @@ mixin input(props={})
   - var fluidClass = ''
   -wrapClass += props.disabled ? ' input_disabled' : ''
   -wrapClass += props.variant ? ` input-${props.variant}` : ''
+  -wrapClass += props.size ? ` input_size_${props.size}` : ''
   -fluidClass += props.disabled ? ' input__fluid_disabled' : ''
+  -fluidClass += props.variant ? ` input__fluid-${props.variant}` : ''
+  -fluidClass += props.size ? ` input__fluid_size_${props.size}` : ''
 
   -delete props.wrapClass
   -delete props.wrapTag
   -delete props.variant
   -delete props.type
   -delete props.inputmode
+  -delete props.size
 
   #{wrapTag}.input(class=wrapClass for=forValue)
     input.input__fluid(type=inputType inputmode=inputmode class=fluidClass)&attributes(props)

@@ -15,6 +15,29 @@
   }
 }
 
+// @template: @include hover-child(color, green, '&::placeholder');
+@mixin hover-child ($property, $value, $child) {
+  #{$child} {
+    transition: #{$property} $easing;
+  }
+
+  &:active {
+    #{$child} {
+      #{$property}: $value;
+    }
+  }
+
+  @include lg-up() {
+
+    &:hover,
+    &:focus {
+      #{$child} {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
 // @template: @include disabled();
 @mixin disabled() {
   pointer-events: none;

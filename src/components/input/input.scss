@@ -2,8 +2,39 @@
   position: relative;
   display: inline-block;
   vertical-align: top;
-  
+
+  &_disabled {
+    @include disabled();
+  }
+
+
   &__fluid {
     width: 100%;
+
+    &_size {
+      &_m {
+        height: em(25px);
+        padding-bottom: em(6px);
+      }
+    }
+
+    &-primary {
+      outline: 0;
+      color: $input-color;
+      font-weight: 500;
+      background-color: transparent;
+      border-right: none;
+      border-left: none;
+      border-top: none;
+      border-bottom: 1px solid $input-border-color;
+      vertical-align: sub;
+
+      &:placeholder {
+        color: $input-placeholder-color;
+        font-weight: 400;
+      }
+  
+      @include hover-child(color, $input-placeholder-color-hover, '&::placeholder');
+    }
   }
 }

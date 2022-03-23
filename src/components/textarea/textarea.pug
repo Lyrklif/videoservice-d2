@@ -1,0 +1,50 @@
+
+//-
+  Многострочное текстовое поле (textarea)
+  props:
+  - {string|number} id - id поля
+  - {string} variant - вариант стилей textarea {primary}
+  - {string} resize - можно ли изменять размеры поля {none|both|horizontal|vertical|inherit}
+  - {string} size - размер поля {m}
+  - {string} padding - размер внутр.отступов {m}
+  - {string|number} value - значение textarea
+  - {string} placeholder - текст, который отображается, пока поле не заполнено
+  - {string} autocomplete - автозаполнение {off|on}
+  - {boolean} error - указывает на ошибку варидации, выделяя поле красным цветом
+  - {boolean} disabled - textarea заблокирован
+  - {string} wrapTag - тег родительского элемента для textarea {label|span|div}
+  - {string} wrapClass - классы для родительского элемента textarea
+mixin textarea(props={})
+  - var wrapTag = props.wrapTag || 'label'
+  - var forValue = (props.id && wrapTag === 'label') ? props.id : null
+  - var tabindex = props.disabled ? -1 : props.tabindex || 0
+  - var readonly = props.disabled ? true : false
+  - var resize = props.resize || 'none'
+
+  - var wrapClass = ''
+  - var fluidClass = ''
+  -wrapClass += props.disabled ? ' textarea_disabled' : ''
+  -wrapClass += props.variant ? ` textarea-${props.variant}` : ''
+  -wrapClass += props.size ? ` textarea_size_${props.size}` : ''
+  -fluidClass += props.disabled ? ' textarea__fluid_disabled' : ''
+  -fluidClass += props.variant ? ` textarea__fluid-${props.variant}` : ''
+  -fluidClass += props.size ? ` textarea__fluid_size_${props.size}` : ''
+  -fluidClass += resize ? ` textarea__fluid_resize_${resize}` : ''
+  -fluidClass += props.padding ? ` textarea__fluid_padding_${props.padding}` : ''
+  -fluidClass += props.error ? ` textarea__fluid${props.variant ? `-${props.variant}` : ''}_error` : ''
+
+  -delete props.wrapClass
+  -delete props.wrapTag
+  -delete props.variant
+  -delete props.size
+  -delete props.tabindex
+  -delete props.resize
+  -delete props.padding
+
+  #{wrapTag}.textarea(class=wrapClass for=forValue)
+    textarea.textarea__fluid(
+      class=fluidClass 
+      tabindex=tabindex 
+      readonly=readonly
+    )&attributes(props)
+      block

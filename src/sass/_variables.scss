@@ -13,10 +13,12 @@ $browser-context: 16;
 $white: #fff;
 $gray-dark: #333;
 $gray-light: #828282;
+$gray-light-2: #F2F2F2;
 $primary: #e5261e;
 $primary-dark: #cc221b;
 $blue: #1f4766;
 
+$error-color: #E5261E;
 $border-color: $gray-dark;
 
 $easing: .3s ease-in-out;
@@ -51,6 +53,10 @@ $input-border-color: $border-color;
 $input-color: $gray-dark;
 $input-placeholder-color: $gray-light;
 $input-placeholder-color-hover: $gray-dark;
+$input-size-variants: ( 
+  'm': 25px, 
+);
+
 
 // *** Переменные для link
 $link-dark-color: $gray-dark;
@@ -59,3 +65,15 @@ $link-primary-color:  $primary;
 $link-primary-color-hover: $primary-dark;
 $link-secondary-color: $blue;
 $link-secondary-color-hover:  $primary;
+
+
+// *** Переменные для textarea
+$textarea-primary-bg-color: $gray-light-2;
+$textarea-border-radius: 8px;
+$textarea-resize-variants: [ 'none', 'both', 'horizontal', 'vertical', 'inherit' ];
+$textarea-padding-variants: ( 
+  'm': 16px, 
+);
+$textarea-size-variants: ( 
+  'm': 110px, 
+);

@@ -1,0 +1,72 @@
+.textarea {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  
+  &__fluid {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border-radius: em($textarea-border-radius);
+    min-height: inherit;
+
+
+    &_resize {
+      @each $resize in $textarea-resize-variants {
+        &_#{$resize} {
+          resize: #{$resize};
+        }
+      }
+    }
+
+    &_padding {
+      @each $name, $value in $textarea-padding-variants {
+        &_#{$name} {
+          padding: em($value);
+        }
+      }
+    }
+
+    &_size {
+      @each $name, $value in $textarea-size-variants {
+        &_#{$name} {
+          min-height: em($value);
+        }
+      }
+    }
+
+
+    &-primary {
+      --placeholder-color: #{$input-placeholder-color};
+      --placeholder-color-hover: #{$input-placeholder-color-hover};
+
+      font-weight: 500;
+      color: $input-color;
+      background-color: $textarea-primary-bg-color;
+      border: 0;
+      outline: 0;
+      vertical-align: sub;
+
+      &::placeholder {
+        font-weight: 400;
+        color: var(--placeholder-color);
+      }
+      @include hover-child(color, var(--placeholder-color-hover), '&::placeholder');
+
+
+      &_error {
+        --placeholder-color: #{$error-color};
+        --placeholder-color-hover: #{$error-color};
+
+        background-color: rgba($error-color, 0.15);
+      }
+    }
+  }
+
+
+  &_disabled {
+    @include disabled();
+  }
+}

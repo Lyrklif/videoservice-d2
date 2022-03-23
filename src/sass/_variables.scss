@@ -13,6 +13,7 @@ $browser-context: 16;
 $white: #fff;
 $gray-dark: #333;
 $gray-light: #828282;
+$gray-light-2: #F2F2F2;
 $primary: #e5261e;
 $primary-dark: #cc221b;
 $blue: #1f4766;
@@ -66,6 +67,7 @@ $link-secondary-color-hover:  $primary;
 
 
 // *** Переменные для textarea
+$textarea-primary-bg-color: $gray-light-2;
 $textarea-border-radius: 8px;
 $textarea-resize-variants: [ 'none', 'both', 'horizontal', 'vertical', 'inherit' ];
 $textarea-padding-variants: ( 

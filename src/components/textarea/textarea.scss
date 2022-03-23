@@ -41,8 +41,7 @@
     &-primary {
       font-weight: 500;
       color: $input-color;
-      background-color: transparent;
-      border: 1px solid $input-border-color;
+      background-color: $textarea-primary-bg-color;
       outline: 0;
       vertical-align: sub;
 

@@ -51,6 +51,10 @@ $input-border-color: $border-color;
 $input-color: $gray-dark;
 $input-placeholder-color: $gray-light;
 $input-placeholder-color-hover: $gray-dark;
+$input-size-variants: ( 
+  "m": 25px, 
+);
+
 
 // *** Переменные для link
 $link-dark-color: $gray-dark;

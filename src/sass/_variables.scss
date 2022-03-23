@@ -59,3 +59,14 @@ $link-primary-color:  $primary;
 $link-primary-color-hover: $primary-dark;
 $link-secondary-color: $blue;
 $link-secondary-color-hover:  $primary;
+
+
+// *** Переменные для textarea
+$textarea-border-radius: 8px;
+$textarea-resize-variants: [ 'none', 'both', 'horizontal', 'vertical', 'inherit' ];
+$textarea-padding-variants: ( 
+  "m": 16px, 
+);
+$textarea-size-variants: ( 
+  "m": 110px, 
+);

@@ -2,6 +2,7 @@
 //-
   Поле для ввода текста/цифр (input с типами: text, number, search, password)
   props:
+  - {string|number} id - id поля
   - {string} variant - вариант стилей input {primary}
   - {string} type - тип данных поля {text|number|search|password}
   - {string} inputmode - какую клавиатуру использовать для ввода {text|decimal|numeric|search}
@@ -10,14 +11,18 @@
   - {string} autocomplete - автозаполнение {off|on}
   - {boolean} disabled - input заблокирован
   - {string} wrapTag - тег родительского элемента для input {label|span|div}
+  - {string} wrapClass - классы для родительского элемента для input
 mixin input(props={})
   - var wrapTag = props.wrapTag || 'label'
   - var inputType = props.type || 'text'
   - var inputmode = props.inputmode || 'text'
+  - var forValue = (props.id && wrapTag === 'label') ? props.id : null
 
   - var wrapClass = ''
+  - var fluidClass = ''
   -wrapClass += props.disabled ? ' input_disabled' : ''
   -wrapClass += props.variant ? ` input-${props.variant}` : ''
+  -fluidClass += props.disabled ? ' input__fluid_disabled' : ''
 
   -delete props.wrapClass
   -delete props.wrapTag
@@ -25,5 +30,5 @@ mixin input(props={})
   -delete props.type
   -delete props.inputmode
 
-  #{wrapTag}.input(class=wrapClass)
-    input.input__fluid(type=inputType inputmode=inputmode)&attributes(props)
+  #{wrapTag}.input(class=wrapClass for=forValue)
+    input.input__fluid(type=inputType inputmode=inputmode class=fluidClass)&attributes(props)

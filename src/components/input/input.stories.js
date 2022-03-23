@@ -20,6 +20,10 @@ export default {
       control: { type: 'select' },
       options: [ 'primary' ],
     },
+    size: {
+      control: { type: 'select' },
+      options: [ 'm' ],
+    },
     type: {
       control: { type: 'select' },
       options: [ 'text', 'number', 'search', 'password' ],

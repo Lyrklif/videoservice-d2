@@ -11,7 +11,7 @@
   - {string} inputClass - стили для input
 mixin checkbox(props = {})
   - var checked = props.checked
-  - var tabindex = props.disabled ? null : props.tabindex || 0
+  - var tabindex = props.disabled ? -1 : props.tabindex || 0
   - var title = props.title || null
   - var isCustomBox = props.variant && props.variant !== 'default'
 

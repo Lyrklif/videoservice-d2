@@ -9,6 +9,7 @@
   - {boolean} disabled - кнопка заблокирована
 mixin btn(props = {})
   - var tag = props.tag || 'button'
+  - var tabindex = props.disabled ? -1 : props.tabindex || 0
   - var classes = ''
   -classes += props.disabled ? ' btn_disabled' : ''
   -classes += props.variant ? ` btn-${props.variant}` : ''
@@ -16,6 +17,7 @@ mixin btn(props = {})
 
   -delete props.tag
   -delete props.variant
+  -delete props.tabindex
 
-  #{tag}.btn(class=classes)&attributes(props)
+  #{tag}.btn(class=classes tabindex=tabindex)&attributes(props)
     block 

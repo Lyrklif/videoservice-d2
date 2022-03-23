@@ -18,6 +18,7 @@ mixin input(props={})
   - var inputType = props.type || 'text'
   - var inputmode = props.inputmode || 'text'
   - var forValue = (props.id && wrapTag === 'label') ? props.id : null
+  - var tabindex = props.disabled ? -1 : props.tabindex || 0
 
   - var wrapClass = ''
   - var fluidClass = ''
@@ -34,6 +35,7 @@ mixin input(props={})
   -delete props.type
   -delete props.inputmode
   -delete props.size
+  -delete props.tabindex
 
   #{wrapTag}.input(class=wrapClass for=forValue)
-    input.input__fluid(type=inputType inputmode=inputmode class=fluidClass)&attributes(props)
+    input.input__fluid(type=inputType inputmode=inputmode class=fluidClass tabindex=tabindex)&attributes(props)

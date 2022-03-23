@@ -6,7 +6,7 @@
   - {string} variant - вариант стилей ссылки {primary|secondary|dark}
   - {boolean} disabled - заблокировать элемент
 mixin link(props={})
-  - var tabindex = props.disabled ? -1 : props.tabindex
+  - var tabindex = props.disabled ? -1 : props.tabindex || 0
   - var href = props.href || '#'
 
   - var classes = ''

@@ -1,0 +1,21 @@
+
+//-
+  Ссылка
+  props:
+  - {string} href - адрес ссылки
+  - {string} variant - вариант стилей ссылки {primary|secondary|dark}
+  - {boolean} disabled - заблокировать элемент
+mixin link(props={})
+  - var tabindex = props.disabled ? -1 : props.tabindex
+  - var href = props.href || '#'
+
+  - var classes = ''
+  -classes += props.variant ? ` link-${props.variant}` : ''
+  -classes += props.disabled ? ` link_disabled` : ''
+
+  -delete props.variant
+  -delete props.href
+  -delete props.tabindex
+
+  a.link(tabindex=tabindex class=classes href=href)&attributes(props)
+    block

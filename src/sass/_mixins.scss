@@ -41,6 +41,7 @@
 // @template: @include disabled();
 @mixin disabled() {
   pointer-events: none;
+  user-select: none;
   opacity: $disabled-opacity;
   cursor: $disabled-cursor;
 }

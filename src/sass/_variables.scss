@@ -15,6 +15,7 @@ $gray-dark: #333;
 $gray-light: #828282;
 $primary: #e5261e;
 $primary-dark: #cc221b;
+$blue: #1f4766;
 
 $border-color: $gray-dark;
 
@@ -50,3 +51,11 @@ $input-border-color: $border-color;
 $input-color: $gray-dark;
 $input-placeholder-color: $gray-light;
 $input-placeholder-color-hover: $gray-dark;
+
+// *** Переменные для link
+$link-dark-color: $gray-dark;
+$link-dark-color-hover: $primary;
+$link-primary-color:  $primary;
+$link-primary-color-hover: $primary-dark;
+$link-secondary-color: $blue;
+$link-secondary-color-hover:  $primary;

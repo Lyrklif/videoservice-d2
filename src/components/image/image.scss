@@ -1,18 +1,11 @@
 .image {
   position: relative;
   overflow: hidden;
-  
+  display: block;
+  transition: opacity $easing;
+
   &_loading {
     opacity: 0;
-    transition: opacity $easing;
-
-    &:after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
   }
 
   &_loaded {

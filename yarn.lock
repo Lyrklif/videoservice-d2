@@ -8776,6 +8776,11 @@ loader-utils@^2.0.0:
     emojis-list "^3.0.0"
     json5 "^2.1.2"
 
+loading-attribute-polyfill@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/loading-attribute-polyfill/-/loading-attribute-polyfill-2.0.1.tgz#b338c785ca8fcb17dbb6065b904d415184d8ed31"
+  integrity sha512-cwR1ef6VAvJYjt7HBJ6SFUzb6EcSV+O3tNZPyFyGavXshKBd0pSVrelthhkwRMaAuPRF7tHmGB8/VYv+Kp6BIQ==
+
 localtunnel@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/localtunnel/-/localtunnel-2.0.2.tgz#528d50087151c4790f89c2db374fe7b0a48501f0"

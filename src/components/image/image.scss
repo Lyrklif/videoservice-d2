@@ -1,0 +1,14 @@
+.image {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  transition: opacity $easing;
+
+  &_loading {
+    opacity: 0;
+  }
+
+  &_loaded {
+    opacity: 1;
+  }
+}

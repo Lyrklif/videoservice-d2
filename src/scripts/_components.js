@@ -1,9 +1,7 @@
-import checkboxEnterClick from '../components/checkbox';
-import imageLoading from '../components/image';
+import sharedComponentsInit from '../components/_shared';
 
 const init = () => {
-  checkboxEnterClick();
-  imageLoading();
+  sharedComponentsInit();
 };
 
 export default init;

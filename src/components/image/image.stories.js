@@ -1,5 +1,5 @@
 import Image from './image.pug'
-
+import initImageLoadingScript from './index'
 
 export default {
   title: 'Image',
@@ -20,11 +20,6 @@ export default {
     },
     width: { control: 'number' },
     height: { control: 'number' },
-    loading: {
-      control: { type: 'select' },
-      options: [ 'lazy', 'eager', 'auto' ],
-      defaultValue: 'lazy', 
-    },
   },
 };
 
@@ -34,3 +29,23 @@ export const ImageSimple = (props) => {
 };
 
 ImageSimple.storyName = 'Image'
+
+ImageSimple.argTypes = {
+  loading: {
+    control: { type: 'select' },
+    options: [ 'eager', 'auto' ],
+    defaultValue: 'auto', 
+  },
+}
+
+
+export const ImageLazy = (props) => {
+  setTimeout(() => { initImageLoadingScript() }, 100);
+  return Image({ props });
+};
+
+ImageLazy.storyName = 'Image (lazy load)'
+
+ImageLazy.args = {
+  loading: 'lazy',
+}

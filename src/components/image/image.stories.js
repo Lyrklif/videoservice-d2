@@ -45,7 +45,3 @@ export const ImageLazy = (props) => {
 };
 
 ImageLazy.storyName = 'Image (lazy load)'
-
-ImageLazy.args = {
-  loading: 'lazy',
-}

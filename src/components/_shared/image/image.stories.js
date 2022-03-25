@@ -6,12 +6,9 @@ export default {
   argTypes: {
     src: { 
       control: 'text', 
-      defaultValue: 'tmp.png', 
+      defaultValue: 'https://ps.w.org/facebook-conversion-pixel/assets/icon-256x256.png', 
     },
-    src2x: { 
-      control: 'text', 
-      defaultValue: 'tmp2x.png', 
-    },
+    src2x: { control: 'text' },
     srcset: { control: 'text' },
     sizes: { control: 'text' },
     alt: { 
@@ -20,6 +17,11 @@ export default {
     },
     width: { control: 'number' },
     height: { control: 'number' },
+    objectFit: {
+      control: { type: 'select' },
+      options: [ 'cover', 'fill', 'contain', 'scale-down', 'none' ],
+      defaultValue: 'none',
+    },
   },
 };
 

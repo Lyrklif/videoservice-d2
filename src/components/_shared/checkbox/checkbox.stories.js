@@ -1,5 +1,5 @@
 import Checkbox from './checkbox.pug'
-
+import initChackboxScript from './index'
 
 export default {
   title: 'Checkbox',
@@ -21,6 +21,7 @@ export const CheckboxSimple = (props) => {
   const { title } = props;
   const contents = title;
 
+  setTimeout(() => { initChackboxScript() }, 100);
   return Checkbox({ props, contents });
 };
 

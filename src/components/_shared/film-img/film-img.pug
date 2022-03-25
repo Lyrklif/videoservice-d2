@@ -1,0 +1,34 @@
+include ../image/index.pug
+
+//-
+  Постер фильма (изображение/картинка фильма)
+  props:
+  - {string} alt - альтернативный текст
+  - {string} src - ссылка на изображение
+  - {string} srcset - ссылки на адаптивные изображения (заменяет собой src2x)
+  - {string} src2x - ссылка на изображение в 2 раза больше основного (не применяется если есть srcset)
+  - {boolean} rounded - закруглённые углы у картинки
+  - {string} size - размеры изображения {m}
+mixin film-img(props={})
+  - var SIZE_VARIANTS = { 
+  -  m: { height: 370, width: 280 },
+  - }
+  - var BASE_CLASS = 'film-img'
+
+  - var rounded = props.rounded === undefined ? true : props.rounded
+  - var size = props.size === undefined ? 'm' : props.size
+  
+  - var classes = props.class ? `${props.class} ${BASE_CLASS}` : BASE_CLASS
+  - classes += rounded ? ` ${BASE_CLASS}_rounded` : ''
+  - classes += size ? ` ${BASE_CLASS}_size_${size}` : ''
+
+  - var newProps = { 
+  -   height: SIZE_VARIANTS[size].height, 
+  -   width: SIZE_VARIANTS[size].width, 
+  -   class: classes, 
+  -   rounded: rounded, 
+  -   objectFit: 'cover' 
+  - }
+  - var finalProps = Object.assign(props, newProps)
+
+  +image(finalProps)

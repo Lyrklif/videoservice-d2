@@ -23,6 +23,12 @@ $border-color: $gray-dark;
 
 $easing: .3s ease-in-out;
 
+$border-radius: 4px;
+$border-radius-big: 8px;
+
+
+$object-fit-variants: ['cover', 'fill', 'contain', 'scale-down', 'none'];
+
 
 // *** Disabled
 $disabled-opacity: 0.6;
@@ -30,7 +36,7 @@ $disabled-cursor: default;
 
 
 // *** Переменные для кнопок
-$btn-border-radius: 4px;
+$btn-border-radius: $border-radius;
 $btn-color: $primary;
 $btn-color-hover: $primary-dark;
 
@@ -69,7 +75,7 @@ $link-secondary-color-hover:  $primary;
 
 // *** Переменные для textarea
 $textarea-primary-bg-color: $gray-light-2;
-$textarea-border-radius: 8px;
+$textarea-border-radius: $border-radius-big;
 $textarea-resize-variants: [ 'none', 'both', 'horizontal', 'vertical', 'inherit' ];
 $textarea-padding-variants: ( 
   'm': 16px, 

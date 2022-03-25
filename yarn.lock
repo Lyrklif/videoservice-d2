@@ -4204,6 +4204,11 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
+clampify@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/clampify/-/clampify-1.2.1.tgz#30956915a8d4193f131ab404561044a0f7b96e4a"
+  integrity sha512-mJSsioI+7LHxjDqn30zw+WghtCnpUoZmeE+xJe8OMnZJ8Z3ksI5rxAZwI2Y8HQXoHqyXveuzwHoK3cwAUH8Gfw==
+
 class-utils@^0.3.5:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"

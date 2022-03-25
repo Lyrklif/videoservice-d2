@@ -1,12 +1,18 @@
 import ElemFullTooltip from './elem-full-tooltip.pug'
 import initImageLoadingScript from '../image/index'
+import tooltipScriptInit from './tooltip-clipping'
+
+let hiddenText = 'Скрытый текст с описанием'
+for (let index = 0; index < 30; index++) {
+  hiddenText = `Скрытый текст с описанием (${index}) ${hiddenText}`
+}
 
 export default {
   title: 'Elem full tooltip',
   argTypes: {
     text: { 
       control: 'text',
-      defaultValue: 'Скрытый текст с описанием',
+      defaultValue: hiddenText,
     },
     alwaysShow: { 
       control: 'boolean',
@@ -35,8 +41,9 @@ export default {
 
 export const ElemFullTooltipSimple = (props) => {
   setTimeout(() => { initImageLoadingScript() }, 100);
+  setTimeout(() => { tooltipScriptInit() }, 100);
 
-  const sizes = `height: 200px;width: 200px;`
+  const sizes = `height: 370px;width: 370px;`
   const contentStyles = `
     ${sizes}
     background: lightblue;

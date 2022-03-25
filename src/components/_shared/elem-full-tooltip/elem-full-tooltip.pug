@@ -36,4 +36,4 @@ mixin elem-full-tooltip(props={})
   #{wrapTag}(class=BASE_CLASS)&attributes(props)
     block
     #{contentTag}(class=contentClasses)
-      #{textTag}(class=textClasses)= text
+      #{textTag}.js-split-tooltip(class=textClasses)= text

@@ -1,5 +1,5 @@
 import FilmImg from './film-img.pug'
-import initImageLoadingScript from '../image/index'
+import initImageLoadingScript from '../../_shared/image/index'
 
 export default {
   title: 'FilmImg',

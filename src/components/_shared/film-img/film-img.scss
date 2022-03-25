@@ -1,0 +1,27 @@
+.film-img {
+  $size-variants-height: (
+    'm': 370px,
+  );
+  $size-variants-width: (
+    'm': 280px,
+  );
+
+
+  &_size {
+    @each $name, $value in $size-variants-height {
+      &_#{$name} {
+        height: $value; // фиксированный размер в px, не зависит от размера шрифта
+      }
+    }
+    @each $name, $value in $size-variants-width {
+      &_#{$name} {
+        width: $value; // фиксированный размер в px, не зависит от размера шрифта
+      }
+    }
+  }
+
+  
+  &_rounded {
+    border-radius: em($border-radius-big);
+  }
+}

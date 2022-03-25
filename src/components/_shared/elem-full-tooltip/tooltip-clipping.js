@@ -8,7 +8,6 @@ const tooltipClipping = () => {
   };
 
   const removeEndChars = (text) => {
-    console.log('TTT text', text)
     $clampify(text, options);
   }
 

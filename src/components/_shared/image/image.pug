@@ -10,11 +10,16 @@
   - {string} srcset - ссылки на адаптивные изображения (заменяет собой src2x)
   - {string} src2x - ссылка на изображение в 2 раза больше основного (не применяется если есть srcset)
   - {string} sizes - размеры изображения
+  - {string} objectFit - как картинка должна заполнять контейнер {cover|fill|contain|scale-down|none}
 mixin image(props={})
   - var simpleSrcSet = props.src2x ? `${props.src2x} 2x` : null
   - var finalSrcSet = props.srcset || simpleSrcSet
   - var loading = props.loading || 'lazy'
   - var isLazyLoading = loading === 'lazy'
+  - var objectFit = props.objectFit === undefined ? 'cover' : props.objectFit
+
+  - var classes = ''
+  - classes += objectFit ? ` image_fit_${objectFit}` : ''
 
   - delete props.src2x
 
@@ -25,7 +30,7 @@ mixin image(props={})
   //- изображение с ленивой загрузкой
   - if (isLazyLoading)
       noscript.loading-lazy
-        img.image.image_loading.js-lazy-image()&attributes(finalProps)
+        img.image.image_loading.js-lazy-image(class=classes)&attributes(finalProps)
   //- изображение без ленивой загрузки
   - else
-      img.image()&attributes(finalProps)
+      img.image(class=classes)&attributes(finalProps)

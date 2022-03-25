@@ -4,6 +4,14 @@
   display: block;
   transition: opacity $easing;
 
+  &_fit {
+    @each $variant in $object-fit-variants {
+      &_#{$variant} {
+        object-fit: #{$variant};
+      }
+    }
+  }
+
   &_loading {
     opacity: 0;
   }

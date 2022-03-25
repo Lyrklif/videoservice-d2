@@ -24,6 +24,8 @@ $border-color: $gray-dark;
 $easing: .3s ease-in-out;
 
 
+$object-fit-variants: ['cover', 'fill', 'contain', 'scale-down', 'none'];
+
 // *** Disabled
 $disabled-opacity: 0.6;
 $disabled-cursor: default;

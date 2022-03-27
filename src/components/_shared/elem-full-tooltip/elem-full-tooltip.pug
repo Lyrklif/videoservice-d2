@@ -1,0 +1,39 @@
+
+//-
+  Описание (текст) элемента поверх него самого
+  Изначально текст скрыт. При наведении на элемент текст появляется
+  Если alwaysShow=true, то текст отображается постоянно, а не только при наведении
+  props:
+  - {string} text - скрытый текст
+  - {boolean} alwaysShow - всегда показывать описание
+  - {string} wrapTag - тег для родительского элемента {div}
+  - {string} contentTag - тег для контента, внутри которого текст с описанием {div}
+  - {string} textTag - тег для текста с описанием {p}
+  - {string} contentClasses - классы для контента
+  - {string} textClasses - классы для текста
+mixin elem-full-tooltip(props={})
+  - var BASE_CLASS = 'elem-full-tooltip'
+
+  - var wrapTag = props.wrapTag || 'div'
+  - var contentTag = props.contentTag || 'div'
+  - var textTag = props.textTag || 'p'
+  - var text = props.text || ''
+  - var alwaysShow = props.alwaysShow || false
+
+  - var textClasses = props.textClasses ? `${props.textClasses} ${BASE_CLASS}__text` : `${BASE_CLASS}__text`
+  - var contentClasses = props.contentClasses ? `${props.contentClasses} ${BASE_CLASS}__content` : `${BASE_CLASS}__content`
+  - contentClasses += alwaysShow ? ` ${BASE_CLASS}__content_show` : ''
+
+  - delete props.text
+  - delete props.alwaysShow
+  - delete props.textClasses
+  - delete props.contentClasses
+  - delete props.textTag
+  - delete props.contentTag
+  - delete props.wrapTag
+
+
+  #{wrapTag}(class=BASE_CLASS)&attributes(props)
+    block
+    #{contentTag}(class=contentClasses)
+      #{textTag}.js-split-tooltip(class=textClasses)= text

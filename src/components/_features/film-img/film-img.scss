@@ -1,9 +1,9 @@
 .film-img {
   $size-variants-height: (
-    'm': 370px,
+    'm': $film-height,
   );
   $size-variants-width: (
-    'm': 280px,
+    'm': $film-width,
   );
 
 

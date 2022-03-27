@@ -1,13 +1,25 @@
+include ../../_shared/link/index.pug
+include ../../_shared/elem-full-tooltip/index.pug
+include ../film-img/index.pug
 
 
+//-
+  Карточка фильма: постер (картинка), название и описание фильма
+  props:
+  - {string} title - название фильма 
+  - {string} description - описание фильма 
+  - {string} href - адрес ссылки
+  - {string} src - ссылка на изображение
+  - {string} srcset - ссылки на адаптивные изображения (заменяет собой src2x)
+  - {string} src2x - ссылка на изображение в 2 раза больше основного (не применяется если есть srcset)
 mixin film-card(props={})
-  acticle.film-card
-    block
+  - var filmName = props.title
+  - var filmDesc = props.description
+  - var filmLink = props.href || '#'
 
-//- article.film
-//-   a.film__inner(href="#", target="_blank", title=title)
-//-     .film__content
-//-       +img(fileName, title)(class="film__img")
-//-       .film__desc
-//-         p.film__text.js-film-desc: block
-//-     h3.film__title(class!=isApi && 'js-film-title')= title
+
+  acticle.film-card
+    +link({ href: filmLink, variant: 'dark', title: filmName, class: 'film-card__link' })
+      +elem-full-tooltip({ class: "film-card__content", contentClasses: 'film-card__desc', text: filmDesc })
+        +film-img({ alt: filmName, src: props.src, src2x: props.src2x, srcset: props.srcset, rounded: false })
+      h3.film-card__title= filmName

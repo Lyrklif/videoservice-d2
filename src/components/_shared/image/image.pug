@@ -22,6 +22,7 @@ mixin image(props={})
   - classes += objectFit ? ` image_fit_${objectFit}` : ''
 
   - delete props.src2x
+  - delete props.objectFit
 
   - var newProps = { loading: loading, srcset: finalSrcSet }
   - var finalProps = Object.assign(props, newProps)

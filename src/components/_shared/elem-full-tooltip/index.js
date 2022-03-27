@@ -1,1 +1,1 @@
-export { default } from './tooltip-clipping'
+export { default } from './tooltip-clipping';

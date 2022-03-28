@@ -40,8 +40,10 @@ export default {
 
 
 export const ElemFullTooltipSimple = (props) => {
-  setTimeout(() => { initImageLoadingScript() }, 100);
-  setTimeout(() => { tooltipScriptInit() }, 100);
+  setTimeout(() => { 
+    initImageLoadingScript() 
+    tooltipScriptInit()
+  }, 100);
 
   const sizes = `height: 370px;width: 370px;`
   const contentStyles = `

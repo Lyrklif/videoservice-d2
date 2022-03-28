@@ -1,0 +1,47 @@
+include ../../_shared/link/index.pug
+include ../../_shared/image/index.pug
+
+
+//-
+  Карточка жанра фильма: название, иконка, вариант
+  props:
+  - {string} title - название жанра 
+  - {string} href - адрес ссылки
+  - {string} src - ссылка на изображение
+  - {string} srcset - ссылки на адаптивные изображения (заменяет собой src2x)
+  - {string} src2x - ссылка на изображение в 2 раза больше основного (не применяется если есть srcset)
+  - {string} imageClass - доп. классы для изображения
+  - {string} titleClass - доп. классы для заголовка (названия жанра)
+mixin genre-card(props={})
+  - var BASE_CLASS = 'genre-card'
+  - var title = props.title
+  - var href = props.href || '#'
+  - var isTitle = !!props.title
+  - var isImage = !!props.src
+  //- alt не должен дублировать текст ссылки (Accessibility)
+  - var alt = `Иконка жанра${isTitle ? `: ${props.title}` : ''}` 
+  
+  - var wrapClass = BASE_CLASS
+  - var imageClass = `${BASE_CLASS}__image`
+  - var titleClass = `${BASE_CLASS}__title`
+  - wrapClass += props.class ? ` ${props.class}` : ''
+  - imageClass += props.imageClass ? ` ${props.imageClass}` : ''
+  - titleClass += props.titleClass ? ` ${props.titleClass}` : ''
+  - wrapClass += (isTitle && isImage) ? '' : ` ${BASE_CLASS}_vertical_center`
+  - imageClass += isTitle ? '' : ` ${BASE_CLASS}__image_vertical_center`
+  - titleClass += isImage ? '' : ` ${BASE_CLASS}__title_vertical_center`
+
+
+  +link({ class: wrapClass, href: href, title: title })
+    - if (isImage)
+      +image({ 
+        class: imageClass, 
+        alt: alt,
+        src: props.src,
+        srcset: props.srcset,
+        src2x: props.src2x,
+        height: 48,
+        width: 48,
+      })
+    - if (isTitle)
+      h3(class=titleClass)= title

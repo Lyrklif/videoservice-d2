@@ -17,6 +17,11 @@ export default {
       control: { type: 'select' },
       options: [ 'yellow', 'red', 'blue', 'dark' ],
     },
+    padding: { 
+      control: { type: 'select' },
+      options: [ 'm', '' ],
+      defaultValue: 'm'
+    },
     src: { 
       control: 'text', 
       defaultValue: 'https://lyrklif.github.io/videoservice/images/emoji-grinning-face.png', 

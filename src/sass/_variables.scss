@@ -86,6 +86,9 @@ $textarea-size-variants: (
 );
 
 
+// *** Переменные для карточек
+$base-card-width: 280px;
+
 // *** Переменные для film-card
 $film-height: 370px;
-$film-width: 280px;
+$film-width: $base-card-width;

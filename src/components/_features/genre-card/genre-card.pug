@@ -15,6 +15,10 @@ include ../../_shared/image/index.pug
   - {string} titleClass - доп. классы для заголовка (названия жанра)
 mixin genre-card(props={})
   - var BASE_CLASS = 'genre-card'
+  - var BASE_IMAGE_CLASS = `${BASE_CLASS}__image`
+  - var BASE_TITLE_CLASS = `${BASE_CLASS}__title`
+  - var DEFAULT_IMAGE_SIZE = 48
+
   - var title = props.title
   - var href = props.href || '#'
   - var isTitle = !!props.title
@@ -23,15 +27,15 @@ mixin genre-card(props={})
   - var alt = `Иконка жанра${isTitle ? `: ${props.title}` : ''}` 
   
   - var wrapClass = BASE_CLASS
-  - var imageClass = `${BASE_CLASS}__image`
-  - var titleClass = `${BASE_CLASS}__title`
+  - var imageClass = BASE_IMAGE_CLASS
+  - var titleClass = BASE_TITLE_CLASS
   - wrapClass += props.class ? ` ${props.class}` : ''
   - imageClass += props.imageClass ? ` ${props.imageClass}` : ''
   - titleClass += props.titleClass ? ` ${props.titleClass}` : ''
   - wrapClass += props.bgVariant ? ` ${BASE_CLASS}_bg_${props.bgVariant}` : ''
   - wrapClass += (isTitle && isImage) ? '' : ` ${BASE_CLASS}_vertical_center`
-  - imageClass += isTitle ? '' : ` ${BASE_CLASS}__image_vertical_center`
-  - titleClass += isImage ? '' : ` ${BASE_CLASS}__title_vertical_center`
+  - imageClass += isTitle ? '' : ` ${BASE_IMAGE_CLASS}_vertical_center`
+  - titleClass += isImage ? '' : ` ${BASE_TITLE_CLASS}_vertical_center`
 
 
   +link({ class: wrapClass, href: href, title: title })
@@ -42,8 +46,8 @@ mixin genre-card(props={})
         src: props.src,
         srcset: props.srcset,
         src2x: props.src2x,
-        height: 48,
-        width: 48,
+        height: DEFAULT_IMAGE_SIZE,
+        width: DEFAULT_IMAGE_SIZE,
       })
     - if (isTitle)
       h3(class=titleClass)= title

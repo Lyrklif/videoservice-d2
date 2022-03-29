@@ -8,6 +8,7 @@ include ../../_shared/image/index.pug
   - {string} title - название жанра 
   - {string} href - адрес ссылки
   - {string} bgVariant - вариант стилей для фона карточки {yellow|red|blue|dark}
+  - {string} padding - размер внутр.отступов {m}
   - {string} src - ссылка на изображение
   - {string} srcset - ссылки на адаптивные изображения (заменяет собой src2x)
   - {string} src2x - ссылка на изображение в 2 раза больше основного (не применяется если есть srcset)
@@ -33,6 +34,8 @@ mixin genre-card(props={})
   - imageClass += props.imageClass ? ` ${props.imageClass}` : ''
   - titleClass += props.titleClass ? ` ${props.titleClass}` : ''
   - wrapClass += props.bgVariant ? ` ${BASE_CLASS}_bg_${props.bgVariant}` : ''
+  - wrapClass += props.padding ? ` ${BASE_CLASS}_padding_${props.padding}` : ''
+  //- если заголовка или картинки нет, то центрировать существующий контент
   - wrapClass += (isTitle && isImage) ? '' : ` ${BASE_CLASS}_vertical_center`
   - imageClass += isTitle ? '' : ` ${BASE_IMAGE_CLASS}_vertical_center`
   - titleClass += isImage ? '' : ` ${BASE_TITLE_CLASS}_vertical_center`

@@ -1,4 +1,7 @@
 .genre-card {
+  $genre-padding-variants: ( 
+    'm': 24px, 
+  );
   $genre-bg-variants: ( 
   'yellow': linear-gradient(136.27deg, #f2c94c 8.44%, #f29a4a 91.36%), 
   'red': linear-gradient(136.27deg, #f2994a 8.44%, #eb5757 91.36%),
@@ -19,11 +22,6 @@
   min-height: 208px;
   max-width: 100%;
 
-  padding-left: rem(24px);
-  padding-right: rem(24px);
-  padding-bottom: rem(24px);
-  padding-top: rem(24px);
-
   
   @include hover-child(opacity, 1, '&::before');
 
@@ -39,6 +37,15 @@
     height: 100%;
     background-color: $gray-light;
     opacity: 0.8;
+  }
+
+
+  &_padding {
+    @each $name, $value in $genre-padding-variants {
+      &_#{$name} {
+        padding: $value;
+      }
+    }
   }
 
 

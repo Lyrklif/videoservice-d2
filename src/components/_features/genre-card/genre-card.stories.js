@@ -13,6 +13,10 @@ export default {
       control: 'text',
       defaultValue: '#',
     },
+    bgVariant: { 
+      control: { type: 'select' },
+      options: [ 'yellow', 'red', 'blue', 'dark' ],
+    },
     src: { 
       control: 'text', 
       defaultValue: 'https://lyrklif.github.io/videoservice/images/emoji-grinning-face.png', 

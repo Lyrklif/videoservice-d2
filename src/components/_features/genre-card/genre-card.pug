@@ -7,6 +7,7 @@ include ../../_shared/image/index.pug
   props:
   - {string} title - название жанра 
   - {string} href - адрес ссылки
+  - {string} bgVariant - вариант стилей для фона карточки {yellow|red|blue|dark}
   - {string} src - ссылка на изображение
   - {string} srcset - ссылки на адаптивные изображения (заменяет собой src2x)
   - {string} src2x - ссылка на изображение в 2 раза больше основного (не применяется если есть srcset)
@@ -27,6 +28,7 @@ mixin genre-card(props={})
   - wrapClass += props.class ? ` ${props.class}` : ''
   - imageClass += props.imageClass ? ` ${props.imageClass}` : ''
   - titleClass += props.titleClass ? ` ${props.titleClass}` : ''
+  - wrapClass += props.bgVariant ? ` ${BASE_CLASS}_bg_${props.bgVariant}` : ''
   - wrapClass += (isTitle && isImage) ? '' : ` ${BASE_CLASS}_vertical_center`
   - imageClass += isTitle ? '' : ` ${BASE_CLASS}__image_vertical_center`
   - titleClass += isImage ? '' : ` ${BASE_CLASS}__title_vertical_center`

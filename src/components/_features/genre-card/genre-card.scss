@@ -1,8 +1,17 @@
 .genre-card {
+  $genre-bg-variants: ( 
+  'yellow': linear-gradient(136.27deg, #f2c94c 8.44%, #f29a4a 91.36%), 
+  'red': linear-gradient(136.27deg, #f2994a 8.44%, #eb5757 91.36%),
+  'blue': linear-gradient(136.27deg, #56ccf2 8.44%, #2f80ed 91.36%),
+  'dark': linear-gradient(136.27deg, #828282 8.44%, #333 91.36%),
+  );
+
+
+  position: relative;
+  overflow: hidden;
   display: flex;
   width: 280px;
   text-align: center;
-  background-color: $gray-light;
   border-radius: rem($border-radius-medium);
   flex-direction: column;
   box-shadow: inset 0 0 16px rgba(0, 0, 0, .15);
@@ -14,6 +23,36 @@
   padding-right: rem(24px);
   padding-bottom: rem(24px);
   padding-top: rem(24px);
+
+  
+  @include hover-child(opacity, 1, '&::before');
+
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $gray-light;
+    opacity: 0.8;
+  }
+
+
+  &_bg {
+    @each $name, $value in $genre-bg-variants {
+      &_#{$name} {
+        &:before {
+          background: $value;
+        }
+      }
+    }
+  }
+  
+
 
   &_vertical {
     &_center {

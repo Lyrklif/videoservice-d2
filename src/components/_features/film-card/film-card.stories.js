@@ -1,5 +1,7 @@
 import FilmCard from './film-card.pug'
 import initImageLoadingScript from '../../_shared/image/index'
+import tooltipScriptInit from '../../_shared/elem-full-tooltip/tooltip-clipping'
+
 
 export default {
   title: 'FilmCard',
@@ -27,7 +29,10 @@ export default {
 
 
 export const FilmCardSimple = (props) => {
-  setTimeout(() => { initImageLoadingScript() }, 100);
+  setTimeout(() => { 
+    initImageLoadingScript();
+    tooltipScriptInit();
+  }, 100);
   return FilmCard({ props });
 };
 

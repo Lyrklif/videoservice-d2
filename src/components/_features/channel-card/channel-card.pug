@@ -1,0 +1,44 @@
+include ../../_shared/text/index.pug
+include ../../_shared/link/index.pug
+include ../../_shared/image/index.pug
+include ../../_group/tv-show-list/index.pug
+
+
+//-
+  Карточка телеканала: логотип, название, список шоу
+  props:
+  - {string} title - название канала
+  - {string} href - ссылка на страницу канала
+  - {string} src - ссылка на логотип канала
+  - {string} src2x - ссылка на логотип канала x2
+  - {array} items - список элементов таблицы
+  items.props:
+  -- {string} time - дата/время шоу
+  -- {string} title - название шоу
+  -- {string} href - адрес ссылки
+mixin channel-card(props={})
+  - var BASE_CLASS = 'channel-card'
+
+  - var title = props.title
+  - var href = props.href
+  - var src = props.src
+  - var src2x = props.src2x
+  - var items = props.items || []
+
+  - var wrapClass = BASE_CLASS
+  - var titleClass = `${BASE_CLASS}__title`
+  - var imageLinkWrapClass = `${BASE_CLASS}__logo`
+  - var tableClass = `${BASE_CLASS}__table`
+
+
+  article(class=wrapClass)
+    header
+      +text({ variant: 'h3', tag: 'h3', class: titleClass })
+        +link({ title, href, variant: 'dark' })= title
+
+    if (src)
+      +link({ title: title, class: imageLinkWrapClass })
+        +image({ alt: title, src: src, src2x: src2x })
+    
+    table(class=tableClass)
+      +tv-show-list({ items })

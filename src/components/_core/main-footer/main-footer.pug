@@ -1,5 +1,40 @@
+include ../../_shared/text/index.pug
+include ../../_shared/link/index.pug
+include ../../_shared/image/index.pug
+include ../../_shared/icon/index.pug
 
-
+//- 
+  Подвал сайта, повторяется на всех страницах
 mixin main-footer()
-  footer.footer 
-    h2 TODO footer
+  - var title = 'Центр Высоких Технологий'
+  - var href = 'https://htc-cs.ru/'
+
+
+  footer.main-footer
+    .container.main-footer__inner
+      +link({
+          title, 
+          href,
+          class: 'main-footer__logo',
+          target: '_blank'
+        })
+        +icon({ name: 'htc-logo' })
+      .main-footer__content
+        +text({ class: 'main-footer__text' })
+          |426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК&nbsp;&laquo;Металлург&raquo;)
+        
+        +link({ title: 'Позвонить по номеру +7 (3412) 93-88-61', href: 'tel:73412938861', variant: 'dark' })
+          |+7 (3412) 93-88-61
+        |,
+        +link({ title: 'Позвонить по номеру 43-29-29', href: 'tel:432929', variant: 'dark' })
+          |43-29-29
+        
+        +link({ 
+          variant: 'secondary', 
+          title, 
+          href, 
+          class: 'main-footer__htc', 
+          target: '_blank',
+          variant: 'secondary'
+        })
+          |htc-cs.ru

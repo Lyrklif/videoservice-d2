@@ -31,3 +31,25 @@ body {
   white-space: nowrap; /* added line */
   border: 0;
 }
+
+
+
+.container {
+  $grid-gap: 20px;
+  $grid-width: 90%;
+  $grid-width-xl: 1180px;
+
+
+  width: 100%;
+  max-width: calc(100% - #{rem($grid-gap)} * 2);
+  margin-left: auto;
+  margin-right: auto;
+
+  @include sm-up() {
+    max-width: $grid-width;
+  }
+
+  @include xl-up() {
+    max-width: rem($grid-width-xl);
+  }
+}

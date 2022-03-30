@@ -1,0 +1,35 @@
+/*
+  Миксины стилей текста вынесены в отдельный файл, 
+  чтобы их можно было применить к тексту из админки (на будущее)
+*/
+
+
+// Заголовок h1
+// @template: @include h1-style;
+@mixin h1-style () {
+  // ...
+}
+
+
+// Заголовок h2
+// @template: @include h2-style;
+@mixin h2-style () {
+  font-size: rem(24px);
+  line-height: em(28px, 24px);
+}
+
+
+// Заголовок h3
+// @template: @include h3-style;
+@mixin h3-style () {
+  font-size: rem(20px);
+  line-height: em(24px, 20px);
+}
+
+
+// стандартный текст
+// @template: @include p-style;
+@mixin p-style () {
+  font-size: 1rem;
+  line-height: em(19px);
+}

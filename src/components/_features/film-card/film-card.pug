@@ -2,6 +2,8 @@ include ../../_shared/link/index.pug
 include ../../_shared/elem-full-tooltip/index.pug
 include ../film-img/index.pug
 
+include ../../_shared/text/index.pug
+
 
 //-
   Карточка фильма: постер (картинка), название и описание фильма
@@ -22,4 +24,4 @@ mixin film-card(props={})
     +link({ href: filmLink, variant: 'dark', title: filmName, class: 'film-card__link' })
       +elem-full-tooltip({ class: "film-card__content", contentClasses: 'film-card__desc', text: filmDesc })
         +film-img({ alt: filmName, src: props.src, src2x: props.src2x, srcset: props.srcset, rounded: false })
-      h3.film-card__title= filmName
+      +text({ variant: 'h3', tag: 'h3', class: 'film-card__title' })= filmName

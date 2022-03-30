@@ -1,0 +1,31 @@
+
+
+//-
+  Текст
+  props:
+  - {string} tag - html тег компонента {p|div|span|h1|h2|h3|h4|h5|h6}
+  - {string} variant - вариант типографики (не зависит от тега) {p|h2|h3}
+  - {string} weight - начертание шрифта {normal|medium}
+  - {string} color - цвет текста {base|gray|white|error|blue|primary|primary-dark}
+  - {string} align - выравнивание текста {start|center|end|justify}
+mixin text(props={})
+  - var BASE_CLASS = 'text'
+
+  - var tag = props.tag || 'p'
+
+  - var classes = BASE_CLASS
+  -classes += props.weight ? ` ${BASE_CLASS}_weight_${props.weight}` : ''
+  -classes += props.color ? ` ${BASE_CLASS}_color_${props.color}` : ''
+  -classes += props.align ? ` ${BASE_CLASS}_align_${props.align}` : ''
+  -classes += props.variant ? ` ${BASE_CLASS}_variant_${props.variant}` : ''
+
+
+  -delete props.tag
+  -delete props.weight
+  -delete props.color
+  -delete props.align
+  -delete props.variant
+
+
+  #{tag}(class=classes)&attributes(props)
+    block

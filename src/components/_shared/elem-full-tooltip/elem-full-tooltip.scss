@@ -22,7 +22,7 @@
 
 
   &__text {
-    $font-size: 16px;
+    $font-size: $browser-context;
 
     display: inline;
     margin: 0;

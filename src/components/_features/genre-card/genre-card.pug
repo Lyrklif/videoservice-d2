@@ -1,5 +1,6 @@
 include ../../_shared/link/index.pug
 include ../../_shared/image/index.pug
+include ../../_shared/text/index.pug
 
 
 //-
@@ -53,4 +54,4 @@ mixin genre-card(props={})
         width: DEFAULT_IMAGE_SIZE,
       })
     - if (isTitle)
-      h3(class=titleClass)= title
+      +text({ variant: 'h3', tag: 'h3', class: titleClass, color: 'white' })= title

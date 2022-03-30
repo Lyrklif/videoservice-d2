@@ -1,0 +1,16 @@
+.tv-show {
+  display: flex;
+
+  
+  &__time {
+    min-width: em(62px);
+    flex-shrink: 0;
+    padding-left: 0;
+
+    &_variant {
+      &_primary {
+        color: $primary;
+      }
+    }
+  }
+}

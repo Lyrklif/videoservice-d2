@@ -67,6 +67,7 @@
     "stylelint-order": "^3.1.1",
     "stylelint-scss": "^3.12.1",
     "stylelint-webpack-plugin": "^1.0.3",
+    "svg-sprite-html-webpack": "^2.4.0",
     "terser-webpack-plugin": "^2.2.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",

@@ -1,3 +1,58 @@
 .channel-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   
+
+  
+  &_rounded {
+    border-radius: $border-radius-big;
+  }
+
+
+  &_bg {
+    &_gray {
+      background-color: $gray-light-2;
+    }
+  }
+
+
+  &_padding {
+    &_m {
+      padding: 24px 20px;
+
+      @include md-up() {
+        padding-top: 21px;
+        padding-right: 24px;
+        padding-bottom: 14px;
+        padding-left: 33.8%;
+      }
+    }
+  }
+
+
+  &__title {
+    margin-bottom: em(13px, 20px);
+    font-weight: 500;
+  }
+
+
+  &__logo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 114px;
+    margin-bottom: 24px;
+    order: -1;
+  
+    @include md-up() {
+      height: 64px;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 12.2%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 }

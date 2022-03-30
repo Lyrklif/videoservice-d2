@@ -11,6 +11,9 @@ include ../../_group/tv-show-list/index.pug
   - {string} href - ссылка на страницу канала
   - {string} src - ссылка на логотип канала
   - {string} src2x - ссылка на логотип канала x2
+  - {string} bg - вариант фона компонента {gray}
+  - {string} padding - вариант padding компонента {m}
+  - {boolean} rounded - закругление компонента
   - {array} items - список элементов таблицы
   items.props:
   -- {string} time - дата/время шоу
@@ -29,6 +32,10 @@ mixin channel-card(props={})
   - var titleClass = `${BASE_CLASS}__title`
   - var imageLinkWrapClass = `${BASE_CLASS}__logo`
   - var tableClass = `${BASE_CLASS}__table`
+
+  - wrapClass += props.bg ? ` ${BASE_CLASS}_bg_${props.bg}` : ''
+  - wrapClass += props.padding ? ` ${BASE_CLASS}_padding_${props.padding}` : ''
+  - wrapClass += props.rounded ? ` ${BASE_CLASS}_rounded` : ''
 
 
   article(class=wrapClass)

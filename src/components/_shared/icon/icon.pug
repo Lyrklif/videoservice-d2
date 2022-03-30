@@ -1,0 +1,13 @@
+
+
+mixin icon(props={})
+  - var BASE_CLASS = 'svg'
+
+  - var name = props.name
+  - var classes = BASE_CLASS
+  - classes += ` ${BASE_CLASS}-${name}`
+  - classes += props.class ? ` ${props.class}` : ''
+
+
+  svg(class=classes)
+    use(xlink:href="#" + name)

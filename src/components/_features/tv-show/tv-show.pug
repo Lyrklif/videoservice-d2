@@ -1,0 +1,32 @@
+include ../../_shared/link/index.pug
+
+
+//-
+  Дата/время tv шоу и его название
+  props:
+  - {string} time - дата/время шоу
+  - {string} title - название шоу
+  - {string} href - адрес ссылки
+  - {string} variant - вариант стилей {primary}
+mixin tv-show(props={})
+  - var BASE_CLASS = 'tv-show'
+  - var TIME_CLASS = `${BASE_CLASS}__time`
+
+  - var variant = props.variant || 'dark'
+  - var time = props.time
+  - var title = props.title
+  - var href = props.href
+
+  - var wrapClass = BASE_CLASS
+  - var timeClass = TIME_CLASS
+  - timeClass += variant ? ` ${TIME_CLASS}_variant_${variant}` : ''
+
+  - delete props.time
+  - delete props.title
+  - delete props.variant
+  - delete props.href
+
+
+  tr(class=wrapClass)&attributes(props)
+    td(class=timeClass)= time
+    td: +link({ title: title, variant: variant, href: href })= title

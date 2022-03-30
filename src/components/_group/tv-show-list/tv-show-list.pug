@@ -1,0 +1,28 @@
+include ../../_features/tv-show/index.pug
+
+
+//-
+  Список шоу телеканала
+  props:
+  - {string} wrapTag - тег родительского компонента {tbody}
+  - {array} items - список элементов таблицы
+  items.props:
+  -- {string} time - дата/время шоу
+  -- {string} title - название шоу
+  -- {string} href - адрес ссылки
+mixin tv-show-list(props={})
+  - var BASE_CLASS = 'tv-show-list'
+
+  - var items = props.items || []
+  - var wrapTag = props.wrapTag || 'tbody'
+  - var itemClass = `${BASE_CLASS}__item`
+
+
+  #{wrapTag}(class=BASE_CLASS)
+    each val, i in items
+      - var variant = i === 0 ? 'primary' : undefined
+      - var time = val.time
+      - var title = val.title
+      - var href = val.href
+
+      +tv-show({ variant, time, title, href, class: itemClass })

@@ -78,6 +78,7 @@
     "@storybook/addon-a11y": "^6.4.19",
     "@storybook/preset-scss": "^1.0.3",
     "clampify": "^1.2.1",
+    "is-touch-device": "^1.0.1",
     "loading-attribute-polyfill": "^2.0.1",
     "normalize.css": "^8.0.1",
     "pug": "^3.0.2",

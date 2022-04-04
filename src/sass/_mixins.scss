@@ -6,7 +6,7 @@
     #{$property}: $value;
   }
 
-  @include lg-up() {
+  .non-touch-device & {
 
     &:hover,
     &:focus {
@@ -27,7 +27,7 @@
     }
   }
 
-  @include lg-up() {
+  .non-touch-device & {
 
     &:hover,
     &:focus {

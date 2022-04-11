@@ -1,0 +1,26 @@
+
+//-
+  Блок с контентом внутри табов
+  props:
+  - {string} name - название табов (должно быть одинаковым и для контроллов, и для контента) {base}
+  - {boolean} active - активная вклдака
+  - {string} wrapTag - тег родительского компонента {li|div}
+mixin tab-content(props={})
+  - var BASE_CLASS = 'tab-content'
+  - var JS_CONTENT_CLASS = 'js-tabs-content'
+
+  - var wrapTag = props.wrapTag || 'li'
+  - var tabsName = props.name || 'base'
+
+  - var wrapClasses = BASE_CLASS
+  - wrapClasses += ` ${JS_CONTENT_CLASS}`
+  - wrapClasses += props.active ? ` ${BASE_CLASS}_active active` : ''
+
+
+  - delete props.name
+  - delete props.wrapTag
+  - delete props.active
+
+
+  #{wrapTag}(class=wrapClasses data-tabs-content=tabsName)&attributes(props)
+    block

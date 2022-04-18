@@ -1,3 +1,5 @@
+[Старая версия - Frontend D1](https://github.com/Lyrklif/videoservice)
+
 # Стартовый репозиторий с webpack
 
 Общий код для продакшена и для разработки находится в отдельном объекте "commonConfig".

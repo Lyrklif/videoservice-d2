@@ -1,5 +1,39 @@
+include ../../_shared/link/index.pug
+include ../../_shared/icon/index.pug
+include ../site-auth/index.pug
 
 
-mixin main-header()
-  header.header 
-    h2 TODO header
+//- 
+  Шапка сайта
+mixin main-header(props={})
+  - var BASE_CLASS = 'main-header'
+
+  - var isMainPage = props.isMainPage
+  - var wrapClasses = BASE_CLASS
+  - var logoClasses = `${BASE_CLASS}__logo`
+
+  - delete props.isMainPage
+
+  //- логотип в header
+  mixin logo
+    if (isMainPage)
+      div(class=logoClasses)
+        +icon({ name: 'logotype' })
+    else
+      +link({ title: 'Видеосервис', class: logoClasses, href: linkMainPage })
+        +icon({ name: 'logotype' })
+
+
+  header(class=wrapClasses)&attributes(props)
+    +logo
+    form(class=`${BASE_CLASS}__form`)
+      +input({ 
+        type: 'search', 
+        wrapClass: `${BASE_CLASS}__search`, 
+        placeholder: 'Поиск...', 
+        variant: 'primary' 
+      })
+      +btn({ title: 'Найти', variant: 'primary', padding: true })
+        |Найти
+    +site-auth({ class: `${BASE_CLASS}__auth` })
+    //- TODO humburger (mobile)

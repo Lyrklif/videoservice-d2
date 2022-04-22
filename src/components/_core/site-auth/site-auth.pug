@@ -1,6 +1,15 @@
 include ../../_shared/btn/index.pug
 
 
+//- 
+  Авторизация на сайте. Содержит два внутрюблока, отвечающих за разные состояния: 
+  1) кнопка "Войти" для авторизации на сайте 
+  2) изменяемое имя пользователя и кнопка "Выйти" для выхода из аккаунта
+  props:
+  - {string} wrapTag - тег родительского компонента {div}
+  - {string} innerTag - тег внутр.блоков {div}
+  - {boolean} isAuth - авторизован ли пользователь
+  - {string} showClass - класс, добавляемый к отображаемому внутр.блоку {show}
 mixin site-auth(props={})
   - var BASE_CLASS = 'site-auth'
 
@@ -24,10 +33,13 @@ mixin site-auth(props={})
 
 
   #{wrapTag}(class=wrapClasses)&attributes(props)
+    //- пользователь не авторизован, отображается кнопка "Войти"
     #{innerTag}(class=signInClasses)
       +btn({ title: 'Войти', variant: 'primary', padding: true, class: btnSignInClasses })
         |Войти
     
+    //- пользователь уже авторизован, отображается кнопка "Выйти"
+        и изменяемое имя пользователя
     #{innerTag}(class=signOutClasses)
       //- TODO user name
       +btn({ title: 'Выйти', variant: 'secondary', padding: true, class: btnSignOutClasses })

@@ -1,0 +1,34 @@
+include ../../_shared/btn/index.pug
+
+
+mixin site-auth(props={})
+  - var BASE_CLASS = 'site-auth'
+
+  - var wrapTag = props.wrapTag || 'div'
+  - var innerTag = props.innerTag || 'div'
+  - var isAuth = props.isAuth || false
+  - var showClass = props.showClass || 'show'
+
+  - var wrapClasses = BASE_CLASS
+  - var signInClasses = `${BASE_CLASS}__sign-in`
+  - var signOutClasses = `${BASE_CLASS}__sign-out`
+  - var btnSignInClasses = `${BASE_CLASS}__sign-in-btn`
+  - var btnSignOutClasses = `${BASE_CLASS}__sign-out-btn`
+  - signInClasses += isAuth ? '' : ` ${showClass}`
+  - signOutClasses += isAuth ? ` ${showClass}` : '' 
+
+  - delete props.wrapTag
+  - delete props.isAuth
+  - delete props.showClass
+  - delete props.innerTag
+
+
+  #{wrapTag}(class=wrapClasses)&attributes(props)
+    #{innerTag}(class=signInClasses)
+      +btn({ title: 'Войти', variant: 'primary', padding: true, class: btnSignInClasses })
+        |Войти
+    
+    #{innerTag}(class=signOutClasses)
+      //- TODO user name
+      +btn({ title: 'Выйти', variant: 'secondary', padding: true, class: btnSignOutClasses })
+        |Выйти

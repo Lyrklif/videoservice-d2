@@ -12,6 +12,8 @@ include ../../_shared/btn/index.pug
   - {string} showClass - класс, добавляемый к отображаемому внутр.блоку {show}
 mixin site-auth(props={})
   - var BASE_CLASS = 'site-auth'
+  - var SIGN_IN_CLASS = `${BASE_CLASS}__sign-in`
+  - var SIGN_OUT_CLASS = `${BASE_CLASS}__sign-out`
 
   - var wrapTag = props.wrapTag || 'div'
   - var innerTag = props.innerTag || 'div'
@@ -19,12 +21,12 @@ mixin site-auth(props={})
   - var showClass = props.showClass || 'show'
 
   - var wrapClasses = BASE_CLASS
-  - var signInClasses = `${BASE_CLASS}__sign-in`
-  - var signOutClasses = `${BASE_CLASS}__sign-out`
-  - var btnSignInClasses = `${BASE_CLASS}__sign-in-btn`
-  - var btnSignOutClasses = `${BASE_CLASS}__sign-out-btn`
-  - signInClasses += isAuth ? '' : ` ${BASE_CLASS}__sign-in_${showClass}`
-  - signOutClasses += isAuth ? ` ${BASE_CLASS}__sign-out_${showClass}` : '' 
+  - var signInClasses = SIGN_IN_CLASS
+  - var signOutClasses = SIGN_OUT_CLASS
+  - var btnSignInClasses = `${SIGN_IN_CLASS}-btn`
+  - var btnSignOutClasses = `${SIGN_OUT_CLASS}-btn`
+  - signInClasses += isAuth ? '' : ` ${SIGN_IN_CLASS}_${showClass}`
+  - signOutClasses += isAuth ? ` ${SIGN_OUT_CLASS}_${showClass}` : '' 
 
   - delete props.wrapTag
   - delete props.isAuth

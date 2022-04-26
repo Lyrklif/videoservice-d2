@@ -10,10 +10,12 @@ mixin main-header(props={})
   - var BASE_CLASS = 'main-header'
 
   - var isMainPage = props.isMainPage
+  - var isAuth = props.isAuth
   - var wrapClasses = BASE_CLASS
   - var logoClasses = `${BASE_CLASS}__logo`
 
   - delete props.isMainPage
+  - delete props.isAuth
 
   //- логотип в header
   mixin logo
@@ -36,5 +38,5 @@ mixin main-header(props={})
       })
       +btn({ title: 'Найти', variant: 'primary', padding: true })
         |Найти
-    +site-auth({ class: `${BASE_CLASS}__auth` })
+    +site-auth({ class: `${BASE_CLASS}__auth`, isAuth: isAuth })
     //- TODO humburger (mobile)

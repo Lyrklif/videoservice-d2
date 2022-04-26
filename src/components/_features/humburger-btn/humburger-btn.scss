@@ -1,3 +1,20 @@
 .humburger-btn {
-  
+  --line-bg-color: #{$gray-dark};
+  --hover-line-bg-color: #{$primary};
+  --line-height: 1px;
+  --line-width: 100%;
+  --line-vertical-margin: 1px;
+
+
+  @include hover-child(background-color, var(--hover-line-bg-color), '.humburger-btn__line');
+
+
+  &__line {
+    display: block;
+    width: var(--line-width);
+    height: var(--line-height);
+    margin-top: var(--line-vertical-margin);
+    margin-bottom: var(--line-vertical-margin);
+    background-color: var(--line-bg-color);
+  }
 }

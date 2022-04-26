@@ -1,5 +1,30 @@
+include ../../_shared/btn/index.pug
 
 
+//-
+  Кнпока с линиями внутри, нужна для вызова скрытого меню
+  props:
+  - {number} lineCount - количество линий внутри кнопки
+  - {number} lineClass - доп.классы для линий внутри кнопки
+mixin humburger-btn(props={})
+  - var BASE_CLASS = 'humburger-btn'
 
-mixin humburger-btn()
-  .humburger-btn
+  - var lineCount = props.lineCount || 3
+  - var wrapClasses = BASE_CLASS
+  - var lineClasses = `${BASE_CLASS}__line`
+  - wrapClasses += props.class ? ` ${props.class}` : ''
+  - lineClasses += props.lineClass ? `${props.lineClass}` : ''
+
+  mixin line()
+    span(class=lineClasses)
+
+  - delete props.class
+  - delete props.lineClass
+  - delete props.lineCount
+
+
+  +btn({ class: wrapClasses, ...props })
+    - var n = 0
+    while n < lineCount
+      - n++
+      +line

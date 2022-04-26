@@ -3,7 +3,7 @@
   &__sign-out {
     display: none;
 
-    &_show {
+    &.show {
       display: flex;
     }
   }

@@ -23,8 +23,8 @@ mixin site-auth(props={})
   - var signOutClasses = `${BASE_CLASS}__sign-out`
   - var btnSignInClasses = `${BASE_CLASS}__sign-in-btn`
   - var btnSignOutClasses = `${BASE_CLASS}__sign-out-btn`
-  - signInClasses += isAuth ? '' : ` ${showClass}`
-  - signOutClasses += isAuth ? ` ${showClass}` : '' 
+  - signInClasses += isAuth ? '' : ` ${BASE_CLASS}__sign-in_${showClass}`
+  - signOutClasses += isAuth ? ` ${BASE_CLASS}__sign-out_${showClass}` : '' 
 
   - delete props.wrapTag
   - delete props.isAuth

@@ -1,3 +1,10 @@
 .site-auth {
-  
+  &__sign-in,
+  &__sign-out {
+    display: none;
+
+    &_show {
+      display: flex;
+    }
+  }
 }

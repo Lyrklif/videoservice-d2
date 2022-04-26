@@ -8,10 +8,10 @@
 
 
   &__logo {
-    height: 36px;
-    width: 182px;
-    flex-shrink: 0;
     display: block;
+    width: 182px;
+    height: 36px;
+    flex-shrink: 0;
     margin-right: 32px;
 
     &_interactive {
@@ -60,10 +60,10 @@
     --line-width: 20px;
     --line-height: 2px;
     --line-vertical-margin: 2px;
+    display: flex;
 
     width: 36px;
     height: 36px;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;  

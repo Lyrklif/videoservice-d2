@@ -2,6 +2,7 @@ include ../../_shared/link/index.pug
 include ../../_shared/icon/index.pug
 include ../../_shared/input/index.pug
 include ../site-auth/index.pug
+include ../../_features/humburger-btn/index.pug
 
 
 //- 
@@ -39,4 +40,4 @@ mixin main-header(props={})
       +btn({ title: 'Найти', variant: 'primary', padding: true })
         |Найти
     +site-auth({ class: `${BASE_CLASS}__auth`, isAuth: isAuth })
-    //- TODO humburger (mobile)
+    +humburger-btn({ title: 'Открыть мобильную версию меню', class: `${BASE_CLASS}__humburger` })

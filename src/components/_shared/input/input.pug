@@ -26,6 +26,7 @@ mixin input(props={})
   -wrapClass += props.disabled ? ' input_disabled' : ''
   -wrapClass += props.variant ? ` input-${props.variant}` : ''
   -wrapClass += props.size ? ` input_size_${props.size}` : ''
+  -wrapClass += props.wrapClass ? ` ${props.wrapClass}` : ''
   -fluidClass += props.disabled ? ' input__fluid_disabled' : ''
   -fluidClass += props.variant ? ` input__fluid-${props.variant}` : ''
   -fluidClass += props.size ? ` input__fluid_size_${props.size}` : ''

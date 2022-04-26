@@ -1,5 +1,61 @@
 .main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  min-height: 104px;
+
+
+  &__logo {
+    height: 36px;
+    width: 182px;
+    flex-shrink: 0;
+    display: block;
+    margin-right: 32px;
+
+    &_interactive {
+      @include hover(opacity, .7);
+    }
+  }
+
+
+  &__form {
+    display: none;
   
+    @include lg-up() {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  
+    @include xl-up() {
+      margin-right: 57px;
+    }
+  }
+
+
+  &__search {
+    width: 320px;
+  }
+
+
+  &__auth {
+    display: none;
+    margin-top: 2px;
+    width: 200px;
+  
+    @include lg-up() {
+      display: flex;
+    }
+  
+    @include xl-up() {
+      width: 300px;
+    }
+  }
+
+
   &__humburger {
     --line-width: 20px;
     --line-height: 2px;

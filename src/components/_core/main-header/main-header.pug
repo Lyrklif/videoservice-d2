@@ -14,6 +14,7 @@ mixin main-header(props={})
   - var isAuth = props.isAuth
   - var wrapClasses = BASE_CLASS
   - var logoClasses = `${BASE_CLASS}__logo`
+  - logoClasses += !isAuth ? ` ${BASE_CLASS}__logo_interactive` : ''
 
   - delete props.isMainPage
   - delete props.isAuth
@@ -37,7 +38,7 @@ mixin main-header(props={})
         placeholder: 'Поиск...', 
         variant: 'primary' 
       })
-      +btn({ title: 'Найти', variant: 'primary', padding: true })
+      +btn({ title: 'Найти', variant: 'secondary', padding: true })
         |Найти
     +site-auth({ class: `${BASE_CLASS}__auth`, isAuth: isAuth })
     +humburger-btn({ title: 'Открыть мобильную версию меню', class: `${BASE_CLASS}__humburger` })

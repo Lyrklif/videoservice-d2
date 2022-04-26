@@ -29,7 +29,7 @@ mixin main-header(props={})
         +icon({ name: 'logotype' })
 
 
-  header(class=wrapClasses)&attributes(props)
+  header.container(class=wrapClasses)&attributes(props)
     +logo
     form(class=`${BASE_CLASS}__form`)
       +input({ 

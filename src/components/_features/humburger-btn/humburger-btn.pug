@@ -23,7 +23,7 @@ mixin humburger-btn(props={})
   - delete props.lineCount
 
 
-  +btn({ class: wrapClasses, ...props })
+  +btn(Object.assign({ class: wrapClasses }, props))
     - var n = 0
     while n < lineCount
       - n++
